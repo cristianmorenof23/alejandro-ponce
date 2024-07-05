@@ -1,0 +1,7 @@
+mkdocs
+jinja2
+mkdocstrings
+mkdocs-material
+mkdocs-material-extensions
+mkdocs-autolinks-plugin
+mkdocs-pdf-export-plugin

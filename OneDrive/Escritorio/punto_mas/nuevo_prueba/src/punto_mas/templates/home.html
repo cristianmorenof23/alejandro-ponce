@@ -1,0 +1,9 @@
+
+{% extends "index.html" %}
+{% load django_vite %}
+{% block extra_js %}
+    {% vite_asset 'main.js' %}
+{% endblock extra_js %}
+    
+{% block container %}
+{% endblock container %}

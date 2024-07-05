@@ -1,0 +1,2 @@
+recursive-include src/punto_mas/templates *
+recursive-include src/punto_mas/static *
