@@ -8,8 +8,6 @@ import {
   FaPhone,
   FaBars,
   FaTimes,
-  FaWhatsapp,
-  FaClock,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -45,47 +43,25 @@ export default function Navbar() {
       className="fixed top-0 left-0 w-full z-50"
     >
       {/* 🔹 Barra superior */}
-      <div className="bg-[#001E50] text-white text-sm py-2 px-4 flex justify-center md:justify-between items-center">
-        <div className="hidden md:flex items-center gap-6">
-          <div className="flex items-center gap-2">
-            <FaWhatsapp className="text-green-400" />
-            <a
-              href="https://wa.me/5493515607232"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              +54 9 351 560 7232
-            </a>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <FaClock className="text-yellow-300" />
-            <span>Lun-Vie 9 a 18 hs · Sáb 9 a 13 hs</span>
-          </div>
-        </div>
-
-        {/* Texto centrado mobile */}
-        <div className="md:hidden text-center text-xs text-gray-200">
-          Atención personalizada Volkswagen
-        </div>
+      <div className="bg-[#001E50] text-white text-sm py-2 px-4 flex justify-center items-center shadow-sm">
+        <span className="text-center font-medium tracking-wide uppercase text-gray-100">
+          Experiencia y calidad de la mano de tu asesor VW       </span>
       </div>
 
       {/* 🔹 Navbar principal */}
       <nav className="bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
-          {/* Logo */}
+          {/* Logo / Nombre */}
           <Link
             href="/"
             className="flex items-center gap-3 text-[#001E50] hover:opacity-90 transition"
           >
-
             <div className="flex flex-col leading-tight">
               <span className="text-lg font-bold tracking-tight">
                 Alejandro Ponce
               </span>
               <span className="text-xs text-gray-600 font-medium uppercase">
-                Asesor Volkswagen
+                Asesor Comercial
               </span>
             </div>
           </Link>
@@ -96,11 +72,10 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`flex items-center gap-2 transition-all ${
-                  pathname === href
+                className={`flex items-center gap-2 transition-all ${pathname === href
                     ? "text-blue-700 font-semibold border-b-2 border-blue-700 pb-1"
                     : "hover:text-[#003399]"
-                }`}
+                  }`}
               >
                 {icon} {label}
               </Link>
@@ -134,11 +109,10 @@ export default function Navbar() {
                     <Link
                       href={href}
                       onClick={() => setMenuOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-2 rounded-md transition-all ${
-                        pathname === href
+                      className={`flex items-center gap-3 px-4 py-2 rounded-md transition-all ${pathname === href
                           ? "bg-blue-800 text-blue-200 font-semibold"
                           : "hover:bg-blue-900 hover:text-blue-200"
-                      }`}
+                        }`}
                     >
                       {icon}
                       {label}

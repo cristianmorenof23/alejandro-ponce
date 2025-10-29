@@ -29,7 +29,7 @@ export default function SobreMi() {
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center px-6"
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Conocé a tu Asesor</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Conoce a tu Asesor</h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
             Más de una década ayudando a cientos de personas a encontrar su VW ideal          </p>
         </motion.div>

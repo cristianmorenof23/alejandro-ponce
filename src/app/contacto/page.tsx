@@ -18,13 +18,7 @@ export default function Contacto() {
             Contacto
           </h1>
           <p className="text-lg md:text-xl leading-relaxed text-gray-100">
-            Soy{" "}
-            <span className="font-semibold text-white">
-              Alejandro Ponce
-            </span>
-            , asesor Volkswagen en Córdoba.  
-            Si querés conocer precios, financiación o agendar una prueba de manejo,  
-            escribime y te voy a asesorar personalmente.
+            Comunicate por asesoramiento personalizado
           </p>
         </motion.div>
       </section>
@@ -39,15 +33,12 @@ export default function Contacto() {
             transition={{ duration: 0.8 }}
             className="md:w-1/2 space-y-6 bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
           >
-            <h2 className="text-2xl font-semibold text-[#001E50] mb-6">
-              Volkswagen Auto Haus - Castro Barros
-            </h2>
 
             <div className="space-y-5 text-gray-700">
               <div className="flex items-start gap-4">
                 <FaMapMarkerAlt className="text-blue-600 text-2xl mt-1" />
                 <p>
-                  <strong>Dirección:</strong> Av. Castro Barros 1639, Córdoba  
+                  <strong>Dirección:</strong> Av. Castro Barros 1639, Córdoba
                   <br />
                   <span className="text-sm text-gray-500">
                     Compras en tienda · Retiro en tienda
@@ -68,8 +59,8 @@ export default function Contacto() {
               <div className="flex items-center gap-4">
                 <FaClock className="text-blue-600 text-xl" />
                 <p>
-                  <strong>Horarios:</strong>  
-                  Lunes a Viernes de 9:00 a 18:00 hs  
+                  <strong>Horarios:</strong>
+                  Lunes a Viernes de 9:00 a 18:00 hs
                   <br />
                   Sábados de 9:00 a 13:00 hs
                 </p>
