@@ -31,8 +31,7 @@ export default function SobreMi() {
         >
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Conocé a tu Asesor</h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-            Más de una década ayudando a cientos de familias a encontrar su vehículo Volkswagen ideal.
-          </p>
+            Más de una década ayudando a cientos de personas a encontrar su VW ideal          </p>
         </motion.div>
       </section>
 
@@ -115,7 +114,7 @@ export default function SobreMi() {
             >
               <FaWhatsapp className="text-green-500 text-5xl mb-3" />
               <h3 className="font-semibold text-gray-800">WhatsApp</h3>
-              <p className="text-sm text-gray-500 mt-1">Chateá conmigo directo</p>
+              <p className="text-sm text-gray-500 mt-1">Chateá directo</p>
             </motion.a>
 
             {/* Instagram */}

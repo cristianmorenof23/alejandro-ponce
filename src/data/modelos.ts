@@ -1,7 +1,7 @@
 export const modelos = [
   {
     slug: "tera",
-    nombre: "Volkswagen T-Cross Tera",
+    nombre: "Volkswagen Tera",
     descripcion:
       "Con el Tera sos protagonista. Nuestro nuevo SUVW viene a dejar su impronta con estilo y personalidad. Elegante, potente y conectado, está diseñado para quienes disfrutan cada trayecto con estilo.",
     imagenes: [
@@ -216,7 +216,7 @@ export const modelos = [
     slug: "nivus",
     nombre: "Volkswagen Nivus",
     descripcion:
-      "Conectado, tecnológico y con un diseño renovado. El nuevo Nivus combina estilo, performance TSI y el paquete digital Mi VW Connect para que estés siempre al mando. :contentReference[oaicite:1]{index=1}",
+      "Conectado, tecnológico y con un diseño renovado. El nuevo Nivus combina estilo, performance TSI y el paquete digital Mi VW Connect para que estés siempre al mando.",
     imagenes: [
       "/nivus_modelo_1.webp",
       "/nivus_modelo_2.webp",
@@ -321,7 +321,7 @@ export const modelos = [
     slug: "taos",
     nombre: "Volkswagen Taos",
     descripcion:
-      "Un SUVW con superpoderes. Espacio líder, tecnología de vanguardia y diseño audaz para quien quiere destacar en cada viaje. :contentReference[oaicite:1]{index=1}",
+      "Un SUVW con superpoderes. Espacio líder, tecnología de vanguardia y diseño audaz para quien quiere destacar en cada viaje.",
     imagenes: [
       "/modelo_taos_5.jpg",
       "/modelo_taos_1.jpg",
@@ -583,7 +583,7 @@ export const modelos = [
     slug: "virtus",
     nombre: "Volkswagen Virtus",
     descripcion:
-      "Un sedán con personalidad. Diseñado para quienes buscan estilo, tecnología y confort con la eficiencia de un motor TSI. Equipado con faros y luces traseras LED en todas sus versiones. :contentReference[oaicite:1]{index=1}",
+      "Un sedán con personalidad. Diseñado para quienes buscan estilo, tecnología y confort con la eficiencia de un motor TSI. Equipado con faros y luces traseras LED en todas sus versiones.",
     imagenes: [
       "/virtus_modelo_2.webp",
       "/virtus_modelo_1.webp",

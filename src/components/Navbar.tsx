@@ -1,12 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaCar, FaUser, FaPhone, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaCar,
+  FaUser,
+  FaPhone,
+  FaBars,
+  FaTimes,
+  FaWhatsapp,
+  FaClock,
+} from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const pathname = usePathname();
 
   const links = [
@@ -15,71 +26,130 @@ export default function Navbar() {
     { href: "/contacto", label: "Contacto", icon: <FaPhone /> },
   ];
 
-  return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-sm z-50 border-b border-gray-100 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-[#001E50] font-bold text-xl hover:opacity-80 transition"
-        >
-          <FaCar className="text-blue-600 text-2xl" />
-          <span className="font-semibold">Alejandro Ponce</span>
-        </Link>
+  // 🔹 Ocultar navbar al hacer scroll down, mostrar al subir
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsVisible(lastScrollY > currentScrollY || currentScrollY < 80);
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
-        {/* Menú Desktop */}
-        <div className="hidden md:flex gap-8 text-[#001E50] font-medium">
-          {links.map(({ href, label, icon }) => (
-            <Link
-              key={href}
-              href={href}
-              className={`flex items-center gap-2 transition ${
-                pathname === href ? "text-blue-700 font-semibold" : "hover:text-[#003399]"
-              }`}
+  return (
+    <motion.header
+      initial={{ y: 0 }}
+      animate={{ y: isVisible ? 0 : -120 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="fixed top-0 left-0 w-full z-50"
+    >
+      {/* 🔹 Barra superior */}
+      <div className="bg-[#001E50] text-white text-sm py-2 px-4 flex justify-center md:justify-between items-center">
+        <div className="hidden md:flex items-center gap-6">
+          <div className="flex items-center gap-2">
+            <FaWhatsapp className="text-green-400" />
+            <a
+              href="https://wa.me/5493515607232"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
             >
-              {icon} {label}
-            </Link>
-          ))}
+              +54 9 351 560 7232
+            </a>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <FaClock className="text-yellow-300" />
+            <span>Lun-Vie 9 a 18 hs · Sáb 9 a 13 hs</span>
+          </div>
         </div>
 
-        {/* Botón hamburguesa */}
-        <button
-          className="md:hidden text-[#001E50] text-2xl hover:cursor-pointer"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Abrir menú"
-        >
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </button>
+        {/* Texto centrado mobile */}
+        <div className="md:hidden text-center text-xs text-gray-200">
+          Atención personalizada Volkswagen
+        </div>
       </div>
 
-      {/* Menú móvil animado */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -100, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#001E50] text-white py-8 shadow-lg"
+      {/* 🔹 Navbar principal */}
+      <nav className="bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 text-[#001E50] hover:opacity-90 transition"
           >
-            <ul className="flex flex-col items-center gap-6 text-lg font-medium">
-              {links.map(({ href, label }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    onClick={() => setMenuOpen(false)}
-                    className={`hover:text-blue-300 transition ${
-                      pathname === href ? "text-blue-300 font-semibold" : ""
-                    }`}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+
+            <div className="flex flex-col leading-tight">
+              <span className="text-lg font-bold tracking-tight">
+                Alejandro Ponce
+              </span>
+              <span className="text-xs text-gray-600 font-medium uppercase">
+                Asesor Volkswagen
+              </span>
+            </div>
+          </Link>
+
+          {/* Menú Desktop */}
+          <div className="hidden md:flex gap-10 text-[#001E50] font-medium">
+            {links.map(({ href, label, icon }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`flex items-center gap-2 transition-all ${
+                  pathname === href
+                    ? "text-blue-700 font-semibold border-b-2 border-blue-700 pb-1"
+                    : "hover:text-[#003399]"
+                }`}
+              >
+                {icon} {label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Botón Menú (mobile) */}
+          <button
+            className="md:hidden flex items-center gap-2 text-[#001E50] text-xl font-medium"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Abrir menú"
+          >
+            <span className="uppercase text-sm font-semibold">Menú</span>
+            {menuOpen ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
+          </button>
+        </div>
+
+        {/* 🔹 Menú móvil animado */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -50, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden bg-[#001E50] text-white py-10 shadow-xl border-t border-blue-800"
+            >
+              <ul className="flex flex-col items-center gap-6 text-lg font-medium">
+                {links.map(({ href, label, icon }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      onClick={() => setMenuOpen(false)}
+                      className={`flex items-center gap-3 px-4 py-2 rounded-md transition-all ${
+                        pathname === href
+                          ? "bg-blue-800 text-blue-200 font-semibold"
+                          : "hover:bg-blue-900 hover:text-blue-200"
+                      }`}
+                    >
+                      {icon}
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </motion.header>
   );
 }
