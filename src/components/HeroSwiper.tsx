@@ -4,37 +4,42 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 
 const slides = [
   {
     imagen: "/t_cross_swipper.webp",
     titulo: "T-Cross",
     texto: "El SUV ideal para tu día a día",
+    ruta: "/modelo/t-cross",
   },
   {
     imagen: "/tera_swipper.webp",
     titulo: "Tera",
-    texto: "El SUV ideal para tu día a día",
+    texto: "Tecnología, diseño y potencia en un solo SUV",
+    ruta: "/modelo/tera",
   },
   {
     imagen: "/taos_swippe.webp",
     titulo: "Taos",
     texto: "Elegancia, confort y potencia Volkswagen",
+    ruta: "/modelo/taos",
   },
   {
     imagen: "/nivus_swipper.webp",
     titulo: "Nivus",
     texto: "Deportividad y tecnología sin límites",
+    ruta: "/modelo/nivus",
   },
   {
     imagen: "/amarok_swipper.webp",
     titulo: "Amarok",
     texto: "Fuerza y estilo para cualquier terreno",
+    ruta: "/modelo/amarok",
   },
 ];
 
@@ -52,6 +57,7 @@ export default function HeroSwiper() {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="relative w-full h-[80vh] md:h-[90vh]">
+              {/* Imagen de fondo */}
               <Image
                 src={slide.imagen}
                 alt={slide.titulo}
@@ -84,15 +90,19 @@ export default function HeroSwiper() {
                   {slide.texto}
                 </motion.p>
 
-                <motion.a
-                  href="#modelos"
+                {/* Botón que lleva a la página del modelo */}
+                <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="inline-block bg-white text-[#001E50] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition"
                 >
-                  Descubrilo
-                </motion.a>
+                  <Link
+                    href={slide.ruta}
+                    className="inline-block bg-white text-[#001E50] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition"
+                  >
+                    Descubrilo
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </SwiperSlide>

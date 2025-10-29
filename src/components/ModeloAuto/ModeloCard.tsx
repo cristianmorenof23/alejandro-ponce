@@ -12,12 +12,13 @@ export default function ModeloCard({ modelo }: any) {
       className="bg-gray-50 rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition"
     >
       <Image
-        src={modelo.imagen}
+        src={modelo.imagenes[0]}
         alt={modelo.nombre}
         width={600}
         height={400}
         className="w-full h-60 object-cover"
       />
+
       <div className="p-6 text-center">
         <h3 className="text-xl font-bold text-[#001E50] mb-2">
           {modelo.nombre}

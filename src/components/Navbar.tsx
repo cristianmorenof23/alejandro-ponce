@@ -10,7 +10,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const links = [
-    { href: "/", label: "Modelos", icon: <FaCar /> },
+    { href: "/modelo", label: "Modelos", icon: <FaCar /> },
     { href: "/sobre-mi", label: "Sobre mí", icon: <FaUser /> },
     { href: "/contacto", label: "Contacto", icon: <FaPhone /> },
   ];
