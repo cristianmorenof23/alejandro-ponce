@@ -1,7 +1,11 @@
 "use client";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { modelos } from "@/src/data/modelos";
 
 export default function Hero() {
+  const modeloDestacado = modelos[0]; // 👈 el primer modelo del array (por ej. T-Cross)
+
   return (
     <section className="h-[90vh] flex flex-col justify-center items-center bg-linear-to-b from-[#001E50] to-[#003399] text-white text-center px-4">
       <motion.h1
@@ -22,15 +26,14 @@ export default function Hero() {
         Asesoramiento personalizado, confianza garantizada.
       </motion.p>
 
-      <motion.a
-        href="#modelos"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.98 }}
-        transition={{ duration: 0.3 }}
-        className="bg-white text-[#001E50] font-semibold px-10 py-4 rounded-full shadow-md hover:bg-gray-100 transition-colors"
-      >
-        Ver modelos
-      </motion.a>
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+        <Link
+          href={`/modelo/${modeloDestacado.slug}`}
+          className="bg-white text-[#001E50] font-semibold px-10 py-4 rounded-full shadow-md hover:bg-gray-100 transition-colors"
+        >
+          Conocé el {modeloDestacado.nombre}
+        </Link>
+      </motion.div>
     </section>
   );
 }

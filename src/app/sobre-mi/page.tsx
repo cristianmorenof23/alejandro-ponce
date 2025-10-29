@@ -7,7 +7,7 @@ export default function SobreMi() {
   return (
     <>
       {/* 🔹 Banner superior animado */}
-      <section className="relative w-full h-[60vh] bg-gradient-to-r from-[#001E50] via-[#002B80] to-[#003399] flex items-center justify-center text-white overflow-hidden">
+      <section className="relative w-full h-[60vh] bg-linear-to-r` from-[#001E50] via-[#002B80] to-[#003399] flex items-center justify-center text-white overflow-hidden">
         {/* Fondo animado sutil */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -88,7 +88,7 @@ export default function SobreMi() {
         >
           <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#001E50]/10">
             <Image
-              src="/vendedor.jpg" // ⚠️ colocá tu imagen acá
+              src="/alejandro_perfil.jpg"
               alt="Alejandro Ponce - Asesor Comercial Volkswagen"
               fill
               className="object-cover"
