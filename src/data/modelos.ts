@@ -99,6 +99,8 @@ export const modelos = [
     contacto: {
       whatsapp: "https://wa.me/3515607232",
       instagram: "https://instagram.com/aleponceautohaus",
+      facebook: "https://www.facebook.com/profile.php?id=61566892732814",
+
       ubicacion:
         "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
     },
@@ -204,6 +206,8 @@ export const modelos = [
     contacto: {
       whatsapp: "https://wa.me/3515607232",
       instagram: "https://instagram.com/aleponceautohaus",
+      facebook: "https://www.facebook.com/profile.php?id=61566892732814",
+
       ubicacion:
         "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
     },
@@ -304,6 +308,8 @@ export const modelos = [
     contacto: {
       whatsapp: "https://wa.me/3515607232",
       instagram: "https://instagram.com/aleponceautohaus",
+      facebook: "https://www.facebook.com/profile.php?id=61566892732814",
+
       ubicacion:
         "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
     },
@@ -415,6 +421,8 @@ export const modelos = [
     contacto: {
       whatsapp: "https://wa.me/3515607232",
       instagram: "https://instagram.com/aleponceautohaus",
+      facebook: "https://www.facebook.com/profile.php?id=61566892732814",
+
       ubicacion:
         "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
     },
@@ -481,6 +489,8 @@ export const modelos = [
     contacto: {
       whatsapp: "https://wa.me/3515607232",
       instagram: "https://instagram.com/aleponceautohaus",
+      facebook: "https://www.facebook.com/profile.php?id=61566892732814",
+
       ubicacion:
         "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
     },
@@ -560,7 +570,10 @@ export const modelos = [
     contacto: {
       whatsapp: "https://wa.me/3515607232",
       instagram: "https://instagram.com/aleponceautohaus",
-      ubicacion: "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
+      facebook: "https://www.facebook.com/profile.php?id=61566892732814",
+
+      ubicacion:
+        "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
     },
   },
 
@@ -680,6 +693,8 @@ export const modelos = [
     contacto: {
       whatsapp: "https://wa.me/3515607232",
       instagram: "https://instagram.com/aleponceautohaus",
+      facebook: "https://www.facebook.com/profile.php?id=61566892732814",
+
       ubicacion:
         "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
     },
@@ -872,6 +887,8 @@ export const modelos = [
     contacto: {
       whatsapp: "https://wa.me/3515607232",
       instagram: "https://instagram.com/aleponceautohaus",
+      facebook: "https://www.facebook.com/profile.php?id=61566892732814",
+
       ubicacion:
         "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
     },
@@ -973,6 +990,8 @@ export const modelos = [
     contacto: {
       whatsapp: "https://wa.me/3515607232",
       instagram: "https://instagram.com/aleponceautohaus",
+      facebook: "https://www.facebook.com/profile.php?id=61566892732814",
+
       ubicacion:
         "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
     },
@@ -1035,6 +1054,8 @@ export const modelos = [
     contacto: {
       whatsapp: "https://wa.me/3515607232",
       instagram: "https://instagram.com/aleponceautohaus",
+      facebook: "https://www.facebook.com/profile.php?id=61566892732814",
+
       ubicacion:
         "https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros",
     },
