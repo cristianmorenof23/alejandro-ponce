@@ -39,10 +39,6 @@ export default function Contacto() {
                 <FaMapMarkerAlt className="text-blue-600 text-2xl mt-1" />
                 <p>
                   <strong>Dirección:</strong> Av. Castro Barros 1639, Córdoba
-                  <br />
-                  <span className="text-sm text-gray-500">
-                    Compras en tienda · Retiro en tienda
-                  </span>
                 </p>
               </div>
 
@@ -51,15 +47,14 @@ export default function Contacto() {
                 <p>
                   <strong>Teléfono:</strong>{" "}
                   <a href="tel:08003450439" className="hover:underline">
-                    0800-345-0439
-                  </a>
+                    351 560 7232                  </a>
                 </p>
               </div>
 
               <div className="flex items-center gap-4">
                 <FaClock className="text-blue-600 text-xl" />
                 <p>
-                  <strong>Horarios:</strong>
+                  <strong>Horarios: </strong>
                   Lunes a Viernes de 9:00 a 18:00 hs
                   <br />
                   Sábados de 9:00 a 13:00 hs
@@ -95,7 +90,7 @@ export default function Contacto() {
             className="md:w-1/2 w-full h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3413.2488369397943!2d-64.16959452357576!3d-31.40428107426392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2820e7ffb05%3A0x3b5f4bcb7da26bcd!2sVolkswagen%20Auto%20Haus%20-%20Castro%20Barros!5e0!3m2!1ses!2sar!4v1730060000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.8359555541206!2d-64.20443809999999!3d-31.391086500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432993052f0ac7b%3A0x853f65713bb783be!2sVolkswagen%20Auto%20Haus%20-%20Castro%20Barros!5e0!3m2!1ses!2sar!4v1761778341279!5m2!1ses!2sar"
               width="100%"
               height="100%"
               style={{ border: 0 }}
