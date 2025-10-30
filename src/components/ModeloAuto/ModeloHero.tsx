@@ -2,14 +2,16 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaCarSide, FaBolt, FaShieldAlt, FaLightbulb, FaTruckPickup } from "react-icons/fa";
+import { FaCarSide, FaBolt, FaShieldAlt, FaLightbulb, FaTruckPickup, FaPlay, FaToolbox } from "react-icons/fa";
 
 const iconMap: Record<string, any> = {
   FaCarSide,
   FaBolt,
   FaShieldAlt,
   FaLightbulb,
-  FaTruckPickup
+  FaTruckPickup,
+  FaPlay,
+  FaToolbox
 };
 
 export default function ModeloHero({ modelo }: { modelo: any }) {
