@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import PageTransition from "../components/PageTransition";
 import FloatingButtons from "../components/FloatingButtons";
+import ChatBot from "../components/ChatBot"; // ✅ AGREGADO
 import "./globals.css";
 import { Poppins } from "next/font/google";
 
@@ -39,7 +40,7 @@ export const metadata = {
     siteName: "Alejandro Ponce - Volkswagen Córdoba",
     images: [
       {
-        url: "/og_alejandroponce.jpg", // reemplazala por una imagen 1200x630 de tu elección
+        url: "/og_alejandroponce.jpg",
         width: 1200,
         height: 630,
         alt: "Asesor Volkswagen Alejandro Ponce - AutoHaus Córdoba",
@@ -49,7 +50,7 @@ export const metadata = {
     type: "website",
   },
   icons: {
-    icon: "/logo_web.svg", 
+    icon: "/logo_web.svg",
   },
   robots: {
     index: true,
@@ -64,10 +65,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${poppins.className} bg-white text-vwBlue overflow-x-hidden antialiased`}
       >
         <Navbar />
+
         <PageTransition>
           <main className="mt-0">{children}</main>
         </PageTransition>
+
         <Footer />
+
+        {/* ✅ Chat bot separado */}
+        <ChatBot />
+
+        {/* ✅ Botones flotantes separados */}
         <FloatingButtons />
       </body>
     </html>
