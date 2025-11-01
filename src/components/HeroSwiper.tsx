@@ -12,22 +12,22 @@ import "swiper/css/pagination";
 
 const slides = [
   {
-    imagen: "/t_cross_swipper.webp",
+    imagen: "/tcross-header.jpg",
     titulo: "T-Cross",
     texto: "El SUV ideal para tu día a día",
     ruta: "/modelo/t-cross",
+  },
+  {
+    imagen: "/polo-header.png",
+    titulo: "Polo",
+    texto: "Elegancia, confort y potencia Volkswagen",
+    ruta: "/modelo/polo",
   },
   {
     imagen: "/tera_swipper.webp",
     titulo: "Tera",
     texto: "Tecnología, diseño y potencia en un solo SUV",
     ruta: "/modelo/tera",
-  },
-  {
-    imagen: "/taos_swippe.webp",
-    titulo: "Taos",
-    texto: "Elegancia, confort y potencia Volkswagen",
-    ruta: "/modelo/taos",
   },
   {
     imagen: "/nivus_swipper.webp",
@@ -64,7 +64,7 @@ export default function HeroSwiper() {
                 fill
                 priority
                 sizes="100vw"
-                className="object-cover object-center brightness-90"
+                className="object-cover object-[center_70%] md:object-center brightness-90"
               />
 
               {/* Overlay oscuro */}
