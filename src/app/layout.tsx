@@ -49,7 +49,7 @@ export const metadata = {
     type: "website",
   },
   icons: {
-    icon: "/alejandro_perfil.jpg", 
+    icon: "/logo_web.svg", 
   },
   robots: {
     index: true,
