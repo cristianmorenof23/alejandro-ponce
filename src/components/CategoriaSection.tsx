@@ -3,6 +3,42 @@ import { motion } from "framer-motion";
 import AutoCard from "./AutoCard";
 import { autos } from "../data/autos";
 
+
+export const metadata = {
+  title: "Volkswagen Córdoba | Alejandro Ponce · Asesor Comercial",
+  description:
+    "Encontrá tu Volkswagen 0km con asesoramiento personalizado. Alejandro Ponce · Auto Haus Córdoba. Financiación, test drives y entrega inmediata.",
+  keywords: [
+    "Volkswagen Córdoba",
+    "Comprar auto Córdoba",
+    // ...
+  ],
+  openGraph: {
+    title: "Volkswagen Córdoba | Alejandro Ponce",
+    description:
+      "Descubrí la línea Volkswagen. Atención personalizada, planes de financiación y entrega inmediata.",
+    url: "https://alejandroponce.vercel.app",
+    siteName: "Alejandro Ponce - Volkswagen Córdoba",
+    images: [
+      {
+        url: "/seo_ap.png",
+        width: 1200,
+        height: 630,
+        alt: "Volkswagen Córdoba | Alejandro Ponce",
+      },
+    ],
+    // 👇 redes sociales para SEO
+    socialProfiles: [
+      "https://www.instagram.com/aleponceautohaus",
+      "https://www.facebook.com/profile.php?id=61566892732814",
+      "https://wa.me/3515607232"
+    ],
+  },
+};
+
+
+
+
 export default function CategoriaSection() {
   return (
     <section
@@ -46,6 +82,9 @@ export default function CategoriaSection() {
           </div>
         </div>
       ))}
+
+
+
     </section>
   );
 }

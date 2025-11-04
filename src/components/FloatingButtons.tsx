@@ -4,6 +4,7 @@ import {
   FaWhatsapp,
   FaMapMarkerAlt,
   FaFacebookF,
+  FaInstagram, 
 } from "react-icons/fa";
 import { motion, useScroll } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -13,7 +14,6 @@ export default function FloatingButtons() {
   const [visible, setVisible] = useState(true);
   const { scrollY } = useScroll();
 
-  // Ocultar al scrollear
   useEffect(() => {
     let lastY = 0;
     return scrollY.on("change", (y) => {
@@ -37,6 +37,13 @@ export default function FloatingButtons() {
       text: "Facebook",
       color: "bg-[#1877F2] hover:bg-[#0d5fe0]",
       href: "https://www.facebook.com/profile.php?id=61566892732814",
+    },
+    {
+      id: "instagram",
+      icon: <FaInstagram size={22} />, 
+      text: "Instagram",
+      color: "bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90", 
+      href: "https://www.instagram.com/aleponceautohaus",
     },
     {
       id: "ubicacion",
