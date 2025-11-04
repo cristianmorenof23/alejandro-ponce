@@ -40,7 +40,7 @@ export const metadata = {
     siteName: "Alejandro Ponce - Volkswagen Córdoba",
     images: [
       {
-        url: "/og_alejandroponce.jpg",
+        url: "/alejandro_perfil.jpg",
         width: 1200,
         height: 630,
         alt: "Asesor Volkswagen Alejandro Ponce - AutoHaus Córdoba",
