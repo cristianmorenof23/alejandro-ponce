@@ -6,7 +6,7 @@ import ModeloVersiones from "@/src/components/ModeloAuto/ModeloVersiones";
 import { modelos } from "@/src/data/modelos";
 
 export default async function ModeloPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params; // 👈 Desestructuramos la Promise correctamente
+  const { slug } = await params; 
 
   const modelo = modelos.find((m) => m.slug === slug);
 

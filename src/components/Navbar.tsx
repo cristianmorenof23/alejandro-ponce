@@ -45,7 +45,7 @@ export default function Navbar() {
       {/* 🔹 Barra superior con degradado azul */}
       <div className="bg-linear-to-r from-[#001E50] via-[#002B80] to-[#0044CC] text-white text-sm py-2 px-4 flex justify-center items-center shadow-sm">
         <span className="text-center font-medium tracking-wide text-gray-100">
-          Volkswagen Auto Haus Córdoba · Asesoramiento Oficial
+          Asesor de Auto Haus - Concesionario Oficial Volkswagen
         </span>
       </div>
 

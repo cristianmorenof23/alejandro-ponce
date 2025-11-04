@@ -54,7 +54,7 @@ export default function SobreMi() {
             <strong>personalizado, transparente y profesional</strong>, asegurando una experiencia única.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed">
-            Represento con orgullo los valores de Volkswagen: innovación, seguridad y
+            Represento con orgullo los valores que mantenemos en Auto Haus desde Volkswagen: innovación, seguridad y
             confianza. Te acompaño desde el primer contacto hasta la entrega de tu nuevo
             vehículo — y mucho después.
           </p>

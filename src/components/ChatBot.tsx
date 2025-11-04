@@ -7,17 +7,17 @@ import { FaChevronLeft, FaComments } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
-// ✅ Usamos tus modelos reales
+// ✅ Importamos los modelos reales
 import { modelos as autosLista } from "../data/modelos";
 
-// ✅ Slugs correctos de tus categorías
+// ✅ Categorías por slug
 const categorias = {
   suv: ["tera", "t-cross", "nivus", "taos", "nuevo-tiguan"],
   sedan: ["polo", "virtus", "golf-gti"],
   pickup: ["amarok", "saveiro"],
 };
 
-// ✅ Función para mostrar autos + links + imagen
+// ✅ Tarjetas dentro del chat
 const generarLinks = (lista: string[]) => (
   <>
     {lista.map((slug) => {
@@ -26,7 +26,6 @@ const generarLinks = (lista: string[]) => (
 
       return (
         <div key={slug} className="mb-3 flex gap-2">
-          {/* Foto mini */}
           <Image
             src={auto.imagenes?.[0] ?? "/car-placeholder.png"}
             alt={auto.nombre}
@@ -37,15 +36,12 @@ const generarLinks = (lista: string[]) => (
 
           <div className="flex flex-col">
             <div className="font-medium text-sm">{auto.nombre}</div>
-
             <Link
               href={`/modelo/${auto.slug}`}
               className="underline text-blue-600 text-xs"
             >
               Ver detalles →
             </Link>
-
-
           </div>
         </div>
       );
@@ -53,7 +49,7 @@ const generarLinks = (lista: string[]) => (
   </>
 );
 
-// ✅ Respuestas del bot
+// ✅ Respuestas prearmadas
 const respuestas: Record<string, JSX.Element> = {
   suv: (
     <>
@@ -73,35 +69,6 @@ const respuestas: Record<string, JSX.Element> = {
       {generarLinks(categorias.pickup)}
     </>
   ),
-  todos: (
-    <>
-      {autosLista.map((auto: any) => (
-        <div key={auto.slug} className="mb-3 flex gap-2">
-          <Image
-            src={auto.imagenes?.[0]}
-            width={60}
-            height={40}
-            className="rounded border shadow-sm object-cover"
-            alt={auto.nombre}
-          />
-
-          <div className="flex flex-col">
-            <div className="font-medium text-sm">{auto.nombre}</div>
-
-            <Link
-              href={`/modelo/${auto.slug}`}
-              className="underline text-blue-600 text-xs"
-            >
-              Ver detalles →
-            </Link>
-
-
-          </div>
-        </div>
-      ))}
-    </>
-  ),
-
   contacto: (
     <>
       ¡Genial! Escribime 👇 <br /><br />
@@ -114,23 +81,28 @@ const respuestas: Record<string, JSX.Element> = {
       </a>
     </>
   ),
-
   ubicacion: (
     <>
       📍 AutoHaus Córdoba <br />
-      Castro Barros <br /><br />
-      <a
+      Av. Castro Barros 1639 <br /><br />
+
+      🕒 <strong>Horarios:</strong>
+      <br />Lun a Vie 9:00 a 18:00
+      <br />Sáb 9:00 a 13:00
+      <br /><br />
+
+      <Link
         href="https://maps.google.com/?q=Auto+Haus+Volkswagen+Castro+Barros"
         target="_blank"
         className="underline text-blue-600"
       >
         Ver mapa
-      </a>
+      </Link>
     </>
   ),
 };
 
-// ✅ Preguntas principales
+// ✅ Botones del chat
 const preguntas = [
   {
     pregunta: "Modelos disponibles 🚗",
@@ -166,10 +138,10 @@ export default function ChatBot() {
 
   return (
     <div className="fixed bottom-6 right-24 z-50">
-      {/* Ventana del chat */}
+      {/* ✅ Ventana */}
       {open && (
         <div className="bg-white shadow-2xl rounded-2xl w-80 p-4 mb-3 border animate-fadeIn">
-
+          
           {/* Header */}
           <div className="flex justify-between items-center mb-3">
             {historial.length > 0 ? (
@@ -179,7 +151,9 @@ export default function ChatBot() {
               >
                 <FaChevronLeft size={18} />
               </button>
-            ) : <span />}
+            ) : (
+              <span />
+            )}
 
             <div className="flex flex-col items-center">
               <Image
@@ -206,9 +180,11 @@ export default function ChatBot() {
           <div className="text-sm text-gray-700 max-h-72 overflow-y-auto pr-1">
             {ultima ? (
               <div className="space-y-3">
-                {typing
-                  ? <p className="text-gray-400 italic text-xs">Escribiendo…</p>
-                  : <div>{respuestas[ultima]}</div>}
+                {typing ? (
+                  <p className="text-gray-400 italic text-xs">Escribiendo…</p>
+                ) : (
+                  <div>{respuestas[ultima]}</div>
+                )}
 
                 <button
                   onClick={() => setHistorial([])}
@@ -224,7 +200,13 @@ export default function ChatBot() {
                   {grupo.opciones.map((op) => (
                     <button
                       key={op.id}
-                      onClick={() => setHistorial([...historial, op.id])}
+                      onClick={() => {
+                        if (op.id === "todos") {
+                          window.location.href = "/modelo";
+                          return;
+                        }
+                        setHistorial([...historial, op.id]);
+                      }}
                       className="w-full text-left bg-gray-100 hover:bg-gray-200 p-2 rounded mb-1 text-sm"
                     >
                       {op.label}
@@ -237,7 +219,7 @@ export default function ChatBot() {
         </div>
       )}
 
-      {/* Botón flotante */}
+      {/* ✅ Btn flotante */}
       <button
         onClick={() => setOpen(!open)}
         className="bg-blue-700 text-white p-3 rounded-full shadow-xl hover:bg-blue-800 transition"
@@ -245,7 +227,6 @@ export default function ChatBot() {
         <FaComments size={22} />
       </button>
 
-      {/* Animación */}
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: scale(.95); }
