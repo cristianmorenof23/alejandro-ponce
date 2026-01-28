@@ -13,8 +13,8 @@ export const autos = {
       imagenes: ["/nivus_1.webp", "/nivus_2.webp"],
     },
     {
-      nombre: "Taos",
-      imagenes: ["/taos_1.webp", "/taos_2.webp"],
+      nombre: "Nueva Taos",
+      imagenes: ["/nueva_taos_1.webp", "/nueva_taos_2.webp"],
     },
     {
       nombre: "Nuevo Tiguan",
