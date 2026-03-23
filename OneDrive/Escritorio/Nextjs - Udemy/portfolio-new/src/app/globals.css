@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+/* Gradiente animado */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
+}
+
+
+/* Fix para Safari / iOS */
+@supports (-webkit-touch-callout: none) {
+  .ios-fix {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto !important;
+  }
+}
+
+
+
+
